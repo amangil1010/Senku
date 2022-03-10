@@ -70,8 +70,9 @@ public class Senku {
         }
         
         if (saltoDe2X==true || saltoDe2Y==true) {
-            tablero[movDestinoX][movDestinoY] = tablero[movOrigenX][movOrigenY];
+            tablero[movDestinoX][movDestinoY] = FICHAS;
             tablero[movOrigenX][movOrigenY] = VACIO;
+//            tablero[movDestinoX][movDestinoY] = FICHAS;
             if (movOrigenX < movDestinoX){
                 tablero[movOrigenX + 1][movOrigenY] = VACIO;
             } else if (movOrigenY < movDestinoY) {

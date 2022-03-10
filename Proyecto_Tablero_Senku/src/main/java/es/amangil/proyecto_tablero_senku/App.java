@@ -26,7 +26,6 @@ public class App extends Application {
         //
         Senku senku = new Senku();
         senku.mostrarTableroConsola();
-        senku.movimientoFicha((short)1 , (short)3 ,(short)3, (short)3);
         senku.mostrarTableroConsola();
         Tablero tablero = new Tablero(senku);
         
