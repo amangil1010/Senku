@@ -55,6 +55,9 @@ public class Senku {
         boolean saltoDe2X = false;
         boolean saltoDe2Y = false;
         
+        System.out.println("saltosX " + saltosX);
+        System.out.println("saltosY " + saltosY);
+        
         if (saltosX==2 || saltosX==-2) {
             saltoDe2X = true;
         } else {
@@ -82,7 +85,8 @@ public class Senku {
             } else if (movOrigenY > movDestinoY) {
                 tablero[movOrigenX][movOrigenY - 1] = VACIO;
             }
-        } 
+        }
+        
     }
 
     

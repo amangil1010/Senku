@@ -45,6 +45,7 @@ public class Tablero extends GridPane{
                 senku.movimientoFicha((short) filaXOrigen, (short) columnaYOrigen, (short) filaXDestino, (short) columnaYDestino);
                 senku.mostrarTableroConsola();
                 limpiarTablero();
+                pintarTablero ();
                 contador = 0;
                 System.out.println("contador es 0? " + contador);
             }
@@ -77,16 +78,41 @@ public class Tablero extends GridPane{
         
     public void limpiarTablero (){
         
-        System.out.println("JAVI");
-        for (int x=0; x<this.getChildren().size(); x++){
-            this.getChildren().remove(x);            
-            System.out.println("JAVI2");
-            System.out.println("X: " + x);
-                    
+//        System.out.println("JAVI");
+        while ( this.getChildren().size() > 0 ) {
+            for (int x=0; x<this.getChildren().size(); x++){
+                this.getChildren().remove(x);            
+//                System.out.println("JAVI2");
+//                System.out.println("X: " + x);
+
+            }
         }
     }
+    
+    public void pintarTablero (){
+        for(int x=0; x<7; x++) {
+            for(int y=0; y<7; y++) {
+//                System.out.println("hola");
+//                senku.mostrarTableroConsola();
+                if (senku.tablero[x][y] == '2' ){
+//                System.out.println("HOLA");
+//                senku.mostrarTableroConsola();
+                Ficha ficha = new Ficha();
+                this.add(ficha, x, y);
+                }
+                if (senku.tablero[x][y] == '1' ){
+//                System.out.println("hola");
+//                senku.mostrarTableroConsola();
+                FichaHueco fichaHueco = new FichaHueco();
+                this.add(fichaHueco, x, y);
+                
+                }
+            }
+        }
+    }
+    }
         
-}
+
 
 
 
