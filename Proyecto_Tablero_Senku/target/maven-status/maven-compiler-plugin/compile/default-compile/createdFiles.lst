@@ -1,6 +1,7 @@
+es\amangil\proyecto_tablero_senku\Reset.class
+module-info.class
+es\amangil\proyecto_tablero_senku\FichaHueco.class
 es\amangil\proyecto_tablero_senku\Ficha.class
 es\amangil\proyecto_tablero_senku\App.class
 es\amangil\proyecto_tablero_senku\Senku.class
-module-info.class
 es\amangil\proyecto_tablero_senku\Tablero.class
-es\amangil\proyecto_tablero_senku\FichaHueco.class

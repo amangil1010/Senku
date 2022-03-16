@@ -3,6 +3,7 @@ package es.amangil.proyecto_tablero_senku;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
 /**
@@ -29,8 +30,14 @@ public class App extends Application {
         senku.mostrarTableroConsola();
         Tablero tablero = new Tablero(senku);
         
-        paneRoot.setCenter(tablero);            
+        paneRoot.setCenter(tablero);
         
+        HBox paneScores = new HBox();
+        Reset reset = new Reset();
+        paneScores.getChildren().add(reset.boton);
+        reset.crearBoton();
+        paneRoot.getChildren().add(paneScores);
+        reset.codigoBoton();
     }
 
     public static void main(String[] args) {

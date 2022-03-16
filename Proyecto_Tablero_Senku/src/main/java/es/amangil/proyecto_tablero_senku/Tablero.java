@@ -18,7 +18,7 @@ public class Tablero extends GridPane{
     public Tablero(Senku senku) {
         this.senku = senku;
         this.setBackground(new Background(
-            new BackgroundFill(Color.BROWN, CornerRadii.EMPTY, Insets.EMPTY)));
+            new BackgroundFill(Color.DARKSLATEGRAY, CornerRadii.EMPTY, Insets.EMPTY)));
         this.setMinWidth((Ficha.TAM_FICHA + 1) * senku.tamXTablero);
         this.setMinHeight((Ficha.TAM_FICHA + 1) * senku.tamYTablero); 
         this.setMaxWidth((Ficha.TAM_FICHA + 1) * senku.tamXTablero);
@@ -34,12 +34,18 @@ public class Tablero extends GridPane{
             if (contador ==1){
                 filaXOrigen = filaX;
                 columnaYOrigen = columnaY;
+                
+                senku.ganarPartida();
+                
                 System.out.println("filaXOrigen " + filaXOrigen);
                 System.out.println("columnaYOrigen " + columnaYOrigen);
             }
             if (contador ==2){
                 filaXDestino = filaX;
                 columnaYDestino = columnaY;
+                
+                senku.ganarPartida();
+                
                 System.out.println("filaXDestino " + filaXDestino);
                 System.out.println("columnaYDestino " + columnaYDestino);
                 senku.movimientoFicha((short) filaXOrigen, (short) columnaYOrigen, (short) filaXDestino, (short) columnaYDestino);

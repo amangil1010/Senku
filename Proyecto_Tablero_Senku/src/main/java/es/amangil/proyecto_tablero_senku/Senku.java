@@ -58,24 +58,28 @@ public class Senku {
         System.out.println("saltosX " + saltosX);
         System.out.println("saltosY " + saltosY);
         
-        if (saltosX==2 || saltosX==-2) {
+
+        /////////////////////
+        if (saltosX==2 && tablero[movDestinoX - 1][movDestinoY] == FICHAS && tablero[movDestinoX][movDestinoY] == VACIO || saltosX==-2 && tablero[movDestinoX + 1][movDestinoY] == FICHAS && tablero[movDestinoX][movDestinoY] == VACIO && saltosY==0)
+        {
             saltoDe2X = true;
         } else {
             saltoDe2X = false;
-          }
-        
-        if (saltoDe2X==false){
-            if (saltosY==2 || saltosY==-2) {
-                saltoDe2Y = true;
-            } else {
-                saltoDe2Y = false;
-              }
         }
+        
+        
+        ////////////////////
+        if (saltosY==2 && tablero[movDestinoX][movDestinoY - 1] == FICHAS  && tablero[movDestinoX][movDestinoY] == VACIO || saltosY==-2 && tablero[movDestinoX][movDestinoY + 1] == FICHAS && tablero[movDestinoX][movDestinoY] == VACIO && saltosX==0)
+        {
+            saltoDe2Y = true;
+        } else {
+            saltoDe2Y = false;
+        }
+        
         
         if (saltoDe2X==true || saltoDe2Y==true) {
             tablero[movDestinoX][movDestinoY] = FICHAS;
             tablero[movOrigenX][movOrigenY] = VACIO;
-//            tablero[movDestinoX][movDestinoY] = FICHAS;
             if (movOrigenX < movDestinoX){
                 tablero[movOrigenX + 1][movOrigenY] = VACIO;
             } else if (movOrigenY < movDestinoY) {
@@ -104,7 +108,20 @@ public class Senku {
     }
 
 
-    
+    public void ganarPartida() {
+        int cantidad = 0;
+        for(int y=0; y<7; y++) {
+            for(int x=0; x<7; x++) {
+                if (tablero[x][y] == FICHAS) {
+                    cantidad ++;
+                    System.out.println("cantidad: " + cantidad);
+                        if (cantidad == 28){
+                            System.out.println("HAS GANADO");
+                        }
+                }
+            }
+        }
+    }
     
     
     
