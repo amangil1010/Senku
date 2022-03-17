@@ -29,8 +29,11 @@ public class App extends Application {
         senku.mostrarTableroConsola();
         senku.mostrarTableroConsola();
         Tablero tablero = new Tablero(senku);
+        MensajeVictoria mensajevictoria = new MensajeVictoria();
         
         paneRoot.setCenter(tablero);
+        paneRoot.setBottom(mensajevictoria);
+//        senku.ganarPartida();
         
         HBox paneScores = new HBox();
         Reset reset = new Reset();

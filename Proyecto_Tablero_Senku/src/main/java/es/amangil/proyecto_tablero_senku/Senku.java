@@ -3,6 +3,8 @@ package es.amangil.proyecto_tablero_senku;
 
 public class Senku {
 
+    MensajeVictoria mensajevictoria2 = new MensajeVictoria();
+    
     short tamXTablero;
     short tamYTablero;
     char[][] tablero;
@@ -115,11 +117,13 @@ public class Senku {
                 if (tablero[x][y] == FICHAS) {
                     cantidad ++;
                     System.out.println("cantidad: " + cantidad);
-                        if (cantidad == 28){
-                            System.out.println("HAS GANADO");
-                        }
                 }
             }
+        }
+        if (cantidad == 30){
+            System.out.println("HAS GANADO");
+//            mensajevictoria2.mostrarVictoria();
+//            mensajevictoria2.labelVictoria.setVisible(true);
         }
     }
     

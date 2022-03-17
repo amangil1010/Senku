@@ -83,13 +83,9 @@ public class Tablero extends GridPane{
     }
         
     public void limpiarTablero (){
-        
-//        System.out.println("JAVI");
         while ( this.getChildren().size() > 0 ) {
             for (int x=0; x<this.getChildren().size(); x++){
                 this.getChildren().remove(x);            
-//                System.out.println("JAVI2");
-//                System.out.println("X: " + x);
 
             }
         }
